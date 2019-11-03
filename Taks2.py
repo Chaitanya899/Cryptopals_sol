@@ -1,12 +1,16 @@
-def xor(b1, b2):
-    b = bytearray(len(b1))
-    for i in range(len(b1)):
-        b[i] = b1[i] ^ b2[i]
-    return b
+def hex_xor(hexS1, hexS2):
+    """Takes two equal-length hex encoded buffers and produces their XOR combination."""
+    S1 = int(hexdata1, 16)
+    S2 = int(hexdata2, 16)
+    xor = S1 ^ S2
+    return hex(xor)[2:]
 
-b1 = bytearray.fromhex("1c0111001f010100061a024b53535009181c")
-b2 = bytearray.fromhex("686974207468652062756c6c277320657965")
 
-b = bytes(xor(b1, b2))
+def main():
+    # Check that the method works properly
+    assert hex_xor("1c0111001f010100061a024b53535009181c", "686974207468652062756c6c277320657965") ==\
+           "746865206b696420646f6e277420706c6179"
 
-b.encode("hex")
+
+if __name__ == '__main__':
+    main()
