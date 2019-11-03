@@ -17,7 +17,7 @@ def getMessage():
 def getKey():
      key = 0
      while True:
-         print('Enter the key number (1-%s)' % (MAX_KEY_SIZE))
+         print('Enter the key number')
          key = int(input())
          if (key >= 1 and key <= MAX_KEY_SIZE):
              return key
@@ -52,4 +52,4 @@ message = getMessage()
 key = getKey()                          
              
 print('Your translated text is:')
-print(getTranslatedMessage(mode, message, key))       
+print(getTranslatedMessage(mode, message, key)) 
