@@ -15,7 +15,7 @@ def detect_encrypted_text(encrypted_strings):
 
 
 def main():
-    ciphertexts = [bytes.fromhex(line.strip()) for line in open("S1C04_input.txt")]
+    ciphertexts = [bytes.fromhex(line.strip()) for line in open("Task4_input.txt")]
     most_likely_plaintext = detect_encrypted_text(ciphertexts)
     pretty_print_result(most_likely_plaintext)
 
